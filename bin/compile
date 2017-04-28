@@ -5,9 +5,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 AD_SDK_DIR="$CACHE_DIR/appdynamics"
 
-tar xvzf "$BUILD_DIR/bin/compile/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C "$AD_SDK_DIR/"
-sh $AD_SDK_DIR/appdynamics-sdk-native/install.sh
-
+tar xvzf "$BUILD_DIR/bin/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C "$AD_SDK_DIR/"
 export AD_SHARED_LIBRARY_PATH="$AD_SDK_DIR/appdynamics-sdk-native/sdk_lib/lib/libappdynamics_native_sdk.so"
 
 # Run the proxy
