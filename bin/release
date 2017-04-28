@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
-cat <<EOF
+AD_SDK_DIR="$1/appdynamics"
+
+cat << EOF
 ---
+default_process_types:
+  start_ad_proxy: nohup $AD_SDK_DIR/appdynamics-sdk-native/runSDKProxy.sh 1>$AD_SDK_DIR/proxy-log.txt 2>$AD_SDK_DIR/proxy-errors.txt &
 EOF
