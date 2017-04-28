@@ -14,4 +14,5 @@ tar xvzf "$SCRIPT_DIR/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C "$AD
 # Run the proxy
 touch $AD_SDK_DIR/proxy-log.txt
 touch $AD_SDK_DIR/proxy-errors.txt
+$AD_SDK_DIR/appdynamics-sdk-native/install.sh
 nohup $AD_SDK_DIR/appdynamics-sdk-native/runSDKProxy.sh 1>$AD_SDK_DIR/proxy-log.txt 2>$AD_SDK_DIR/proxy-errors.txt &
