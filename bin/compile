@@ -5,7 +5,9 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-AD_SDK_DIR="$CACHE_DIR/appdynamics"
+AD_SDK_DIR="$BUILD_DIR/appdynamics"
+
+mkdir -p $AD_SDK_DIR
 
 tar xvzf "$SCRIPT_DIR/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C "$AD_SDK_DIR/"
 export AD_SHARED_LIBRARY_PATH="$AD_SDK_DIR/appdynamics-sdk-native/sdk_lib/lib/libappdynamics_native_sdk.so"
