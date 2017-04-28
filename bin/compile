@@ -2,6 +2,9 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+mkdir -p /var/cache/apt/archives/partial
+apt-get autoclean
+
 apt-get update
 apt-get install -yy --quiet build-essential swig
 apt-get install -yy --quiet software-properties-common language-pack-en
