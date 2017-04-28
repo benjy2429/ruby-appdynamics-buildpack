@@ -13,4 +13,4 @@ tar xvzf "$SCRIPT_DIR/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C "$AD
 export AD_SHARED_LIBRARY_PATH="$AD_SDK_DIR/appdynamics-sdk-native/sdk_lib/lib/libappdynamics_native_sdk.so"
 
 # Run the proxy
-$AD_SDK_DIR/appdynamics-sdk-native/runSDKProxy.sh
+nohup /opt/appdynamics-sdk-native/runSDKProxy.sh &>/dev/null &
