@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+apt-get update
 apt-get install -yy --quiet build-essential swig
 apt-get install -yy --quiet software-properties-common language-pack-en
 
