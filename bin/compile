@@ -1,9 +1,11 @@
 #!/bin/sh
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 apt-get install -yy --quiet build-essential swig
 apt-get install -yy --quiet software-properties-common language-pack-en
 
-tar xvzf appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz -C /opt
+tar xvzf "$DIR/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C /opt
 sh /opt/appdynamics-sdk-native/install.sh
 
 # Run the proxy
