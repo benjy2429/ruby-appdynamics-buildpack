@@ -7,5 +7,5 @@ tar xvzf appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz -C /opt
 sh /opt/appdynamics-sdk-native/install.sh
 
 # Run the proxy
-chown -R $USER /opt/appdynamics-sdk-native
+chown $USER -R /opt/appdynamics-sdk-native
 sudo /opt/appdynamics-sdk-native/runSDKProxy.sh
