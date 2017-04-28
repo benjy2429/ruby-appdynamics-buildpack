@@ -1,0 +1,10 @@
+#!/bin/sh
+
+sudo apt-get install -yy --quiet build-essential swig
+sudo apt-get install -yy --quiet software-properties-common language-pack-en
+
+sudo tar xvzf appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz -C /opt
+sudo sh /opt/appdynamics-sdk-native/install.sh
+
+# Run the proxy
+sudo /opt/appdynamics-sdk-native/runSDKProxy.sh
