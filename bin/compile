@@ -12,3 +12,8 @@ mkdir -p $AD_SDK_DIR
 tar xvzf "$SCRIPT_DIR/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C "$AD_SDK_DIR/"
 
 $AD_SDK_DIR/appdynamics-sdk-native/install.sh --ignore-permissions
+
+mkdir -p "$BUILD_DIR"/.profile.d
+cat <<EOF >"$BUILD_DIR"/.profile.d/proxy.sh
+nohup ../appdynamics/appdynamics-sdk-native/runSDKProxy.sh &>/dev/null &
+EOF
