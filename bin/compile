@@ -14,6 +14,6 @@ tar xvzf "$SCRIPT_DIR/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C "$AD
 $AD_SDK_DIR/appdynamics-sdk-native/install.sh --ignore-permissions
 
 mkdir -p "$BUILD_DIR"/.profile.d
-cat <<EOF >"$BUILD_DIR"/.profile.d/proxy.sh
-export AD_INSTALLATION_PATH=${AD_SDK_DIR}/appdynamics-sdk-native
+cat <<EOF >"$BUILD_DIR"/.profile.d/appdyanmics.sh
+export AD_INSTALLATION_PATH=/app/appdynamics/appdynamics-sdk-native
 EOF
