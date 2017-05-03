@@ -15,5 +15,5 @@ $AD_SDK_DIR/appdynamics-sdk-native/install.sh --ignore-permissions
 
 mkdir -p "$BUILD_DIR"/.profile.d
 cat <<EOF >"$BUILD_DIR"/.profile.d/proxy.sh
-export AD_INSTALLATION_PATH=${AD_SDK_DIR}
+export AD_INSTALLATION_PATH=${AD_SDK_DIR}/appdynamics-sdk-native
 EOF
