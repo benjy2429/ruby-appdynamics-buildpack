@@ -15,7 +15,7 @@ $AD_SDK_DIR/appdynamics-sdk-native/install.sh --ignore-permissions
 
 mkdir -p "$BUILD_DIR"/.profile.d
 cat <<EOF >"$BUILD_DIR"/.profile.d/appdyanmics.sh
-/app/appdynamics/appdynamics-sdk-native/runSDKProxy.sh &>/dev/null &
+/app/appdynamics/appdynamics-sdk-native/runSDKProxy.sh >/dev/null &
 disown
 export AD_INSTALLATION_PATH=/app/appdynamics/appdynamics-sdk-native
 EOF
