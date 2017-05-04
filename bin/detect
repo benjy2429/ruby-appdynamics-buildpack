@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
+GEMFILE="$1/Gemfile"
 
-exit 0
+if grep -rE "gem 'appdynamics_rb'" GEMFILE
+then
+  echo "AppDynamics"
+  exit 0
+else
+  exit 1
+fi
