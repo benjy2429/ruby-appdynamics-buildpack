@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 GEMFILE="$1/Gemfile"
 
-if grep -rE "gem ['|\"]appdynamics_rb['|\"]" $GEMFILE
+if grep -E "gem ['|\"]appdynamics_rb['|\"]" $GEMFILE
 then
   echo "AppDynamics"
   exit 0
