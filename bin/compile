@@ -21,4 +21,9 @@ until find /app/appdynamics/appdynamics-sdk-native/logs/proxy* | tail -n 1 | xar
 do
   sleep 1
 done;
+
+until ps ax | grep 'java' | grep 'com.appdynamics.ee.agent.proxy.bootstrap.ProxyControlEntryPoint'
+do
+  sleep 1
+done;
 EOF
