@@ -13,9 +13,14 @@ $AD_SDK_DIR/appdynamics-sdk-native/install.sh --ignore-permissions
 
 mkdir -p "$BUILD_DIR"/.profile.d
 cat <<EOF >"$BUILD_DIR"/.profile.d/appdynamics.sh
-rm -rf /app/appdynamics/appdynamics-sdk-native/logs/proxy*
-/app/appdynamics/appdynamics-sdk-native/runSDKProxy.sh &
 export AD_INSTALLATION_PATH=/app/appdynamics/appdynamics-sdk-native
+
+sed -i "s/<param name=\"file\" value=\".*\.log\"\/>/<param name=\"file\" value=\"\/dev\/null\"\/>/g" /app/appdynamics-sdk-native/conf/appdynamics_sdk_log4cxx.xml
+sed -i "s/RollingFileAppender/FileAppender/g" /app/appdynamics-sdk-native/conf/appdynamics_sdk_log4cxx.xml
+
+rm -rf /app/appdynamics/appdynamics-sdk-native/logs/proxy*
+
+/app/appdynamics/appdynamics-sdk-native/runSDKProxy.sh &
 
 until find /app/appdynamics/appdynamics-sdk-native/logs/proxy* | tail -n 1 | xargs cat | grep 'ProxyControl - init completed'
 do
