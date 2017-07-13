@@ -7,7 +7,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 AD_SDK_DIR="$BUILD_DIR/appdynamics"
 mkdir -p $AD_SDK_DIR
 
-tar xvzf "$SCRIPT_DIR/appdynamics-sdk-native-64bit-linux-4.2.6.1.tar.gz" -C "$AD_SDK_DIR/"
+tar xvzf "$SCRIPT_DIR/appdynamics-sdk-native-64bit-linux-4.3.3.4.tar.gz" -C "$AD_SDK_DIR/"
 
 $AD_SDK_DIR/appdynamics-sdk-native/install.sh --ignore-permissions
 
